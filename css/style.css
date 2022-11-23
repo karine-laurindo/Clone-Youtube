@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #f9f9f9;
+    color: #222;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* header,section{
+    padding: 5rem;
+} */
+
+header{
+    padding: 1rem;
+    background-color: #fff;
+    border-bottom: 2px solid #f2f2f2;
+
+    /* HABILITANDO O GRID */
+    display: grid;
+    grid-template-columns: auto auto;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: #222;
+}
+
+.logo img{
+    width: 100px;
+}
+
+.search input[type='search']{
+    width: 400px;
+    padding: 0.5rem;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+}
+
+.buttom{
+    padding: 0.25rem 1.5rem;
+    border: 1px solid #2c5fd5;
+    border-radius: 4px;
+    color: #2c5fd5;
+    font-weight: bold;
+}
+
+.subscribe .buttom{
+    border: none;
+    background-color: #fb2300;
+    color: #fff;
+    padding: 10px 16px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+main{
+    max-width: 1200px;
+    /* CENTRALIZAR CONTEÚDO */
+    margin: auto;
+    /* HABILITANDO O GRID */
+    display: grid;
+    /* ESPAÇO ENTRE AS ÁREAS */
+    /* grid-row-gap: 1rem; */
+    /* HABILITANDO ÁREAS - SERÃO POSICIONADAS */
+    grid-template-areas: 
+    'videoplayer videoplayer'
+    'video-info  video-info'
+    'actions     actions'
+    'channel     subscribe'
+    'up-next     up-next'
+}
+
+.videoplayer{
+    background-color: #ffeb3b;
+    grid-area: videoplayer;
+}
+
+.video-info{
+    background-color: #e91e63;
+    grid-area: video-info;
+}
+
+.actions{
+    background-color: #03a9f4;
+    grid-area: actions;
+}
+
+.channel{
+    background-color: #673ab7;
+    grid-area: channel;
+}
+
+.subscribe{
+    background-color: #8bc34a;
+    grid-area: subscribe;
+}
+
+.ad{
+    background-color: #ff5722;
+    /* display: none; */
+    grid-area: ad;
+}
+
+.up-next{
+    background-color: #3f51b5;
+    grid-area: up-next;
+}
+
+/* APLICANDO RESPONSIVIDADE */
+
+/*  QAPLICANDO O CONCEITO DO MOBILE FIRST */
+
+@media screen and(max-width:700px) {
+    .ad{
+        display: none;
+    }
+}
+
+@media screen and (min-width:700px){
+    header{
+        grid-template-columns: auto auto auto;
+    }
+    main{
+        max-width: 1200px;
+        grid-template-areas: 
+        'videoplayer videoplayer  ad'
+        'videoplayer videoplayer   up-next'
+        'video-info  actions      up-next'
+        'channel     subscribe    up-next'
+    }
+}
+
